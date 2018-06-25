@@ -10,6 +10,9 @@ class Book(models.Model):
     subtitle = fields.Char('Sub-title')
     isbn = fields.Char('ISBN')
     tag_ids = fields.Many2many('biblio.tag', string='Tags')
+    author_id = fields.Many2many('res.partner', string='Author')
+    coauthor_ids = fields.Many2many('res.partner', string='Co-Authors')
+    summary = fields.Text('Summary')
 
 
 class BookTag(models.Model):
@@ -17,3 +20,8 @@ class BookTag(models.Model):
     _description = 'Book Tag'
 
     name = fields.Char('Name')
+    color = fields.Integer('Color')
+    description = fields.Text('Description')
+
+class Author(models.Model):
+    _inherit = 'res.partner'

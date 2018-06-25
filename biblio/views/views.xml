@@ -9,7 +9,9 @@
                     <field name="name"/>
                     <field name="subtitle"/>
                     <field name="isbn"/>
-                    <field name="tag_ids"/>
+                    <field name="author_id" placeholder="Author"/>
+                    <field name="coauthor_ids" placeholder="Authors" widget="many2many_tags" />
+                    <field name="tag_ids" widget="many2many_tags"/>
                 </tree>
             </field>
         </record>
@@ -24,12 +26,15 @@
                             <h1><field name="name" placeholder="Title"/></h1>
                         </div>
                         <field name="subtitle" placeholder="Sub-Title"/>
+                        <field name="author_ids" placeholder="Author" />
+                        <field name="coauthor_ids" placeholder="Co-Authors" widget="many2many_tags" />
                         <group>
-
                             <field name="isbn"/>
                             <field name="tag_ids"/>
                         </group>
-
+                        <notebook>
+                            <page string="Summary"><field name="summary"/></page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
