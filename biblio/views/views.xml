@@ -26,7 +26,7 @@
                             <h1><field name="name" placeholder="Title"/></h1>
                         </div>
                         <field name="subtitle" placeholder="Sub-Title"/>
-                        <field name="author_ids" placeholder="Author" />
+                        <field name="author_id" placeholder="Author" />
                         <field name="coauthor_ids" placeholder="Co-Authors" widget="many2many_tags" />
                         <group>
                             <field name="isbn"/>
